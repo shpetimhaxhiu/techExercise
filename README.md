@@ -1,10 +1,10 @@
 # techExercise
 
-This is simple AngularJS just to demonstrate programming skills in front-end.
+This is a simple AngularJS application made to demonstrate programming skills in front-end.
 
 ## What is it about?
 
-Is is a simple application which shows the list of users from where you can View, Edit or Remove a User.
+It is a users list from where you can Create New, View, Edit or Remove a User.
 
 ## What functions are implemented?
 
@@ -14,4 +14,4 @@ For example, when you click on view button of a user there you can see Online Re
 
 ## Quick Start
 
-For starting quick I've pre-created a list of users which will be loaded on localstorage at the moment you visit the application. Then you can manipulate datas.
+For starting quick I've pre-created a list of users objects which will be loaded on localstorage at the moment you visit the application. Then you can manipulate datas.
