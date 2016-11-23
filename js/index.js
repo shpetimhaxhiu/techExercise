@@ -65,7 +65,8 @@ usersApp.controller("UsersListController", function($scope, $http){
 
 	// Delete User Function
 	$scope.deleteUser = function(usrId) {
-		var result = $.grep($scope.users, function(e){ 
+        if(confirm('Are you sure you want to delete the user?')){
+         var result = $.grep($scope.users, function(e){ 
 			return e.id == usrId; 
 		});
 
@@ -91,9 +92,10 @@ usersApp.controller("UsersListController", function($scope, $http){
 		  // multiple items found
 		}
 
+        }
 	}
 
-
+	// Edit user function
 	$scope.editUser = function(userId) {
 
 		var result = $.grep($scope.users, function(e){ 
@@ -139,7 +141,8 @@ usersApp.controller("UsersListController", function($scope, $http){
 
 		$('#editUserForm').modal('show');
 	}
-
+	
+	// Save user function
 	$scope.saveUser = function(userId) {
 		var result = $.grep($scope.users, function(e){ 
 			return e.id == userId; 
@@ -231,7 +234,7 @@ usersApp.controller("UsersListController", function($scope, $http){
 		$('#viewUserForm').modal('show');
 	}
 
-
+	// Function to fill the repos array from github based on Account
 	function getRepos(userGitHubId){
 	console.log("Repoz funcc");
 		$http.get("https://api.github.com/users/" +userGitHubId+"/repos")
@@ -249,7 +252,7 @@ usersApp.controller("UsersListController", function($scope, $http){
 		    	}
 		    });
 		}
-
+	// Taken from stackoverflow (to generate IDs)
 	function generateGuid() {
 	  var result, i, j;
 	  result = '';
